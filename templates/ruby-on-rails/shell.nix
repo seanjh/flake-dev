@@ -7,6 +7,7 @@ pkgs.mkShell {
         solargraph
         bundler
         rubocop
+        rails
       ]
     ))
     libyaml
