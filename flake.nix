@@ -32,7 +32,7 @@
       {
         devShells = {
           ruby = rubyShell;
-          rubyOnRails = rubyOnRails;
+          ruby-on-rails = rubyOnRails;
         };
       }
     );

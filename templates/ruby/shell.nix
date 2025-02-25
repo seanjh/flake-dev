@@ -4,8 +4,9 @@ pkgs.mkShell {
     (ruby_3_4.withPackages (
       ps: with ps; [
         solargraph
-        rubocop
         bundler
+        rubocop
+        rubocop-performance
       ]
     ))
     libyaml

@@ -5,10 +5,11 @@ pkgs.mkShell {
     (ruby_3_4.withPackages (
       ps: with ps; [
         solargraph
-        rubocop
         bundler
-        rubocop-rails
+        rubocop
+        rubocop-performance
         rubocop-rspec
+        rubocop-rspec_rails
         erb-lint
       ]
     ))
