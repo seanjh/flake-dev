@@ -9,7 +9,7 @@ pkgs.mkShell {
         rubocop
 
         bigdecimal
-        io_console
+        io-console
         racc
         psych
         # strscan
