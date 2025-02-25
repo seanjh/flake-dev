@@ -14,6 +14,10 @@ pkgs.mkShell {
   shellHook = ''
     export GEM_HOME="$PWD/.gem"
     export PATH="$GEM_HOME/bin:$PATH"
+    if [ ! -f Gemfile.lock ]; then
+        echo "Installing gems..."
+        bundle install
+    fi
 
     bundle config set --local path '.bundle'
     bundle config set force_ruby_platform true

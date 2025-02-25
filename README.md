@@ -31,8 +31,8 @@ Initialize a new project using one of the available templates:
 
 ```bash
 # For a Ruby development environment
-nix flake init -t github:seanjh/flake-dev-templates#ruby
+nix flake init -t github:seanjh/flake-dev#ruby
 
 # For a Ruby on Rails development environment
-nix flake init -t github:seanjh/flake-dev-templates#ruby-on-rails
+nix flake init -t github:seanjh/flake-dev#ruby-on-rails
 ```
