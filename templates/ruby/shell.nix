@@ -6,7 +6,6 @@ pkgs.mkShell {
         solargraph
         bundler
         rubocop
-        rubocop-performance
       ]
     ))
     libyaml

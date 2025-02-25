@@ -7,10 +7,6 @@ pkgs.mkShell {
         solargraph
         bundler
         rubocop
-        rubocop-performance
-        rubocop-rspec
-        rubocop-rspec_rails
-        erb-lint
       ]
     ))
     libyaml

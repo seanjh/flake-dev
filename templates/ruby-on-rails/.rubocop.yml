@@ -1,3 +1,4 @@
 plugins:
-  - rubocop-other-extension
+  - rubocop-rspec
+  - rubocop-rspec_rails
   - rubocop-performance
