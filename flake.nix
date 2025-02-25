@@ -27,12 +27,10 @@
       let
         pkgs = import nixpkgs { inherit system; };
         rubyShell = import ./templates/ruby/shell.nix { inherit pkgs; };
-        rubyOnRails = import ./templates/ruby-on-rails/shell.nix { inherit pkgs; };
       in
       {
         devShells = {
           ruby = rubyShell;
-          ruby-on-rails = rubyOnRails;
         };
       }
     );

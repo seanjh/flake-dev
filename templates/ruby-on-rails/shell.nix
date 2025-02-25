@@ -9,7 +9,6 @@ pkgs.mkShell {
         rubocop
       ]
     ))
-    rails
     libyaml
   ];
   shellHook = ''

@@ -22,7 +22,7 @@ nix develop ../flake-dev#ruby --command ruby -e 'puts "Hello, world"'
 
 ```bash
 # In direnv's .envrc
-use flake github:seanjh/flake-dev#ruby-on-rails
+use flake github:seanjh/flake-dev#ruby
 ```
 
 ### Templates
