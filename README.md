@@ -1,6 +1,6 @@
 # flake-dev
 
-A collection of [Nix](https://nixos.org/) flake templates and environments. Generally the templates at [NixOS/templates](https://github.com/NixOS/templates/tree/master) and [the-nix-way/dev-templates](https://github.com/the-nix-way/dev-templates) and the dev environments at [the-nix-way/nix-flake-dev-environments](https://github.com/the-nix-way/nix-flake-dev-environments) are better, but these ones are mine and special to me.
+A collection of [Nix](https://nixos.org/) flake
 
 ## Prerequisites
 

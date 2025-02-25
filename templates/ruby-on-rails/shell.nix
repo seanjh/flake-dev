@@ -7,6 +7,18 @@ pkgs.mkShell {
         solargraph
         bundler
         rubocop
+
+        bigdecimal
+        io_console
+        racc
+        psych
+        # strscan
+        stringio
+        date
+        json
+        net-http
+        net-protocol
+        net-smtp
       ]
     ))
     libyaml
