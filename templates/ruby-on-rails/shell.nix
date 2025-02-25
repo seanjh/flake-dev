@@ -7,9 +7,9 @@ pkgs.mkShell {
         solargraph
         bundler
         rubocop
-        rails
       ]
     ))
+    rails
     libyaml
   ];
   shellHook = ''
