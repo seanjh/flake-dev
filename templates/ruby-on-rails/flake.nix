@@ -2,7 +2,7 @@
   description = "Ruby on Rails development environment";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/release-24.11";
+    nixpkgs.url = "nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -20,7 +20,7 @@
       {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
-            (ruby_3_3.withPackages (
+            (ruby_3_4.withPackages (
               ps: with ps; [
                 bundler
                 ruby-lsp
