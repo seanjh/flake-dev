@@ -1,8 +1,9 @@
 {
-  inputs = {
+  description = "Ruby on Rails development environment";
 
-    nixpkgs.url = "https://flakehub.com/f/nixos/nixpkgs/0.2411.*";
-    flake-utils.url = "https://flakehub.com/f/numtide/flake-utils/*";
+  inputs = {
+    nixpkgs.url = "nixpkgs/release-24.11";
+    flake-utils.url = "github:numtide/flake-utils";
   };
   outputs =
     {
@@ -22,8 +23,10 @@
               ps: with ps; [
                 bundler
                 ruby-lsp
+                erb-formatter
               ]
             ))
+            pkg-config
             gcc
             gnumake
             binutils
@@ -32,6 +35,7 @@
             libyaml
             zlib
             gmp
+            vips
           ];
           shellHook = with pkgs; ''
             export LIBRARY_PATH=${
@@ -40,20 +44,32 @@
                 libyaml
                 zlib
                 gmp
+                vips
               ]
             }:$LIBRARY_PATH
+            export LD_LIBRARY_PATH=${
+              lib.makeLibraryPath [
+                openssl
+                libyaml
+                zlib
+                gmp
+                vips
+              ]
+            }:$LD_LIBRARY_PATH
             export C_INCLUDE_PATH=${
               lib.makeSearchPath "include" [
                 openssl.dev
                 libyaml.dev
                 zlib.dev
                 gmp.dev
+                vips.dev
               ]
             }:$C_INCLUDE_PATH
             export PKG_CONFIG_PATH=${
               lib.makeSearchPath "lib/pkgconfig" [
                 openssl.dev
                 zlib.dev
+                vips.dev
               ]
             }:$PKG_CONFIG_PATH
 
