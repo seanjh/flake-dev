@@ -27,10 +27,14 @@
       let
         pkgs = import nixpkgs { inherit system; };
         rubyShell = import ./templates/ruby/shell.nix { inherit pkgs; };
+        claraRailsShell = import ./devenvs/clara-rails/default.nix { inherit pkgs; };
+        pythonShell = import ./devenvs/python/default.nix { inherit pkgs; };
       in
       {
         devShells = {
           ruby = rubyShell;
+          clara-rails = claraRailsShell;
+          python = pythonShell;
         };
       }
     );
