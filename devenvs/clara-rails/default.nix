@@ -10,7 +10,7 @@ let
       };
     });
   };
-  
+
   customGemsOverlay = final: prev: {
     rubyPackages_3_3 = prev.rubyPackages_3_3 // {
       ruby-lsp-rails = prev.buildRubyGem rec {
@@ -64,7 +64,7 @@ pkgsWithOverlays.mkShell {
     pgcli
     heroku
   ];
-  
+
   shellHook = with pkgsWithOverlays; ''
     # isolate any accidental or purposeful "gem install"s here
     export GEM_HOME="$PWD/.gem"
