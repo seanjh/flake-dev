@@ -15,16 +15,27 @@
     flake-utils.lib.eachDefaultSystem (
       system:
       let
+        rubyVersion = "3.3.8"
+        customRuby_3_3 = final: prev: {
+          ruby_3_3 = prev.ruby_3_3.overrideAttrs (old: {
+            version = rubyVersion;
+            src = pkgs.fetchurl {
+              url = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-${rubyVersion}.tar.gz";
+              sha256 = "sha256-WuKKh6WaPkrWa8KTHSMturlT0KqPa687xPj4CXfInKs=";
+            };
+          });
+        };
         pkgs = import nixpkgs { inherit system; };
       in
       {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
-            (ruby_3_4.withPackages (
+            (ruby_3_3.withPackages (
               ps: with ps; [
                 bundler
                 ruby-lsp
-                erb-formatter
+                standard
+                rails
               ]
             ))
             pkg-config
