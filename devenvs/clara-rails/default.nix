@@ -1,16 +1,6 @@
 { pkgs }:
 
 let
-  customRubyOverlay = final: prev: {
-    ruby_3_3 = prev.ruby_3_3.overrideAttrs (old: rec {
-      version = "3.3.8";
-      src = pkgs.fetchurl {
-        url = "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-${version}.tar.gz";
-        sha256 = "sha256-WuKKh6WaPkrWa8KTHSMturlT0KqPa687xPj4CXfInKs=";
-      };
-    });
-  };
-
   customGemsOverlay = final: prev: {
     rubyPackages_3_3 = prev.rubyPackages_3_3 // {
       ruby-lsp-rails = prev.buildRubyGem rec {
@@ -23,7 +13,7 @@ let
           url = "https://rubygems.org/downloads/${gemName}-${version}.gem";
           sha256 = "sha256-luxuPoPeCEt8Vanagy1qf+I+WDJ7inrbiP2ETbse3OE=";
         };
-        propagatedBuildInputs = with prev.rubyPackages_3_3; [ ruby-lsp ];
+        propagatedBuildInputs = [ prev.rubyPackages_3_3.ruby-lsp ];
       };
     };
   };
@@ -31,7 +21,6 @@ let
   pkgsWithOverlays = import pkgs.path {
     inherit (pkgs) system;
     overlays = [
-      customRubyOverlay
       customGemsOverlay
     ];
   };
