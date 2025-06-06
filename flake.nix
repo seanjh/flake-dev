@@ -12,6 +12,10 @@
     }:
     {
       templates = {
+        basic = {
+          path = ./templates/basic;
+          description = "Basic starter flake dev environment template";
+        };
         ruby = {
           path = ./templates/ruby;
           description = "Ruby development environment";
